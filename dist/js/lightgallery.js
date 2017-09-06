@@ -1,4 +1,4 @@
-/*! lightgallery - v1.6.0 - 2017-08-08
+/*! lightgallery - v1.6.0 - 2017-09-06
 * http://sachinchoolur.github.io/lightGallery/
 * Copyright (c) 2017 Sachin N; Licensed GPLv3 */
 (function (root, factory) {
@@ -7,7 +7,7 @@
     define(['jquery'], function (a0) {
       return (factory(a0));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
@@ -775,6 +775,9 @@
 
         var _prevIndex = this.$outer.find('.lg-current').index();
         var _this = this;
+        if (_this.index !== index) {
+            _this.index = index;
+        }
 
         // Prevent if multiple call
         // Required for hsh plugin

@@ -756,6 +756,9 @@
 
         var _prevIndex = this.$outer.find('.lg-current').index();
         var _this = this;
+        if (_this.index !== index) {
+            _this.index = index;
+        }
 
         // Prevent if multiple call
         // Required for hsh plugin
