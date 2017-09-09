@@ -1,7 +1,7 @@
-/*! lightgallery - v1.6.0 - 2017-09-06
+/*! lightgallery - v1.6.0 - 2017-09-09
 * http://sachinchoolur.github.io/lightGallery/
 * Copyright (c) 2017 Sachin N; Licensed GPLv3 */
-/*! lightgallery - v1.6.0 - 2017-09-06
+/*! lightgallery - v1.6.0 - 2017-09-09
 * http://sachinchoolur.github.io/lightGallery/
 * Copyright (c) 2017 Sachin N; Licensed GPLv3 */
 (function (root, factory) {
@@ -78,6 +78,8 @@
         index: false,
 
         iframeMaxWidth: '100%',
+        iframeWidth: '100%',
+        iframeHeight: '100%',
 
         download: true,
         counter: true,
@@ -672,7 +674,7 @@
         var _isVideo = _this.isVideo(_src, index);
         if (!_this.$slide.eq(index).hasClass('lg-loaded')) {
             if (iframe) {
-                _this.$slide.eq(index).prepend('<div class="lg-video-cont lg-has-iframe" style="max-width:' + _this.s.iframeMaxWidth + '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' + _src + '"  allowfullscreen="true"></iframe></div></div>');
+                _this.$slide.eq(index).prepend('<div class="lg-video-cont lg-has-iframe" style="max-width:' + _this.s.iframeMaxWidth + '"><div class="lg-video"><iframe class="lg-object" frameborder="0" width=' + _this.s.iframeWidth + ' height=' + _this.s.iframeHeight + ' src="' + _src + '"  allowfullscreen="true"></iframe></div></div>');
             } else if (_hasPoster) {
                 var videoClass = '';
                 if (_isVideo && _isVideo.youtube) {
