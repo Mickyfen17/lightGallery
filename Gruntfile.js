@@ -137,7 +137,8 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                reporter: require('jshint-stylish')
+                reporter: require('jshint-stylish'),
+                reporterOutput: ''
             },
             gruntfile: {
                 options: {
@@ -197,7 +198,7 @@ module.exports = function(grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', ['clean', 'jshint', 'connect', 'qunit', 'umd:all', 'concat','uglify', 'sass', 'cssmin', 'copy', /*'usebanner', 'watch'*/]);
+    grunt.registerTask('default', ['clean', 'jshint', 'connect', /*'qunit',*/ 'umd:all', 'concat','uglify', 'sass', 'cssmin', 'copy', /*'usebanner', 'watch'*/]);
     grunt.registerTask('server', function() {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
         grunt.task.run(['serve']);
